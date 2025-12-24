@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 17 24 39;
+  --foreground: 243 244 246;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(75 85 99) rgb(31 41 55);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(31 41 55);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(75 85 99);
+  border-radius: 4px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(250, 204, 21, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(250, 204, 21, 0.6); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(31, 41, 55, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #facc15, #eab308);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom button hover */
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(250, 204, 21, 0.4);
+}
